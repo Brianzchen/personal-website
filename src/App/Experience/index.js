@@ -1,8 +1,10 @@
 import React from 'react';
 
+import Header from 'components/Header';
+
 const Experience = () => (
   <div>
-    Experience
+    <Header value="Experience" />
   </div>
 );
 

@@ -11,6 +11,7 @@ const style = {
 const Button = props => (
   <div
     style={style}
+    className={`mdi mdi-${props.icon}`}
     title={props.title}
   >
     B
@@ -18,6 +19,7 @@ const Button = props => (
 );
 
 Button.propTypes = {
+  icon: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
 };
 

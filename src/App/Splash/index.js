@@ -1,6 +1,5 @@
 import React from 'react';
 
-import NavBar from './NavBar';
 import Title from './Title';
 import SocialMediaContainer from './SocialMediaContainer';
 
@@ -24,11 +23,11 @@ class Splash extends React.Component {
       display: 'flex',
       flexDirection: 'column',
       height: `${window.innerHeight}px`,
+      background: '#ffa71a', // TODO replace with image
     };
 
     return (
       <div style={style}>
-        <NavBar />
         <Title />
         <SocialMediaContainer />
       </div>

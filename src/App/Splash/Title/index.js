@@ -9,7 +9,9 @@ const style = {
 
 const Title = () => (
   <div style={style}>
-    Brian Chen
+    <h1>
+      Brian Chen
+    </h1>
   </div>
 );
 
