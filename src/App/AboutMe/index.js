@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Header from 'components/Header';
+import Section from 'components/Section';
 import Text from 'components/Text';
 
 import { aboutMe } from 'lib/locations';
@@ -12,12 +12,11 @@ const text = `
 `;
 
 const AboutMe = () => (
-  <div id={aboutMe.link}>
-    <Header value={aboutMe.name} />
+  <Section location={aboutMe}>
     <Text>
       {text}
     </Text>
-  </div>
+  </Section>
 );
 
 export default AboutMe;

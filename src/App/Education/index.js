@@ -1,17 +1,16 @@
 import React from 'react';
 
-import Header from 'components/Header';
+import Section from 'components/Section';
 
 import { education } from 'lib/locations';
 
 import School from './School';
 
 const Education = () => (
-  <div id={education.link}>
-    <Header value={education.name} />
+  <Section location={education}>
     <School name="University of Auckland" />
     <School name="Udacity" />
-  </div>
+  </Section>
 );
 
 export default Education;

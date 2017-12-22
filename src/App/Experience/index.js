@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Header from 'components/Header';
+import Section from 'components/Section';
 
 import { experience } from 'lib/locations';
 
@@ -11,8 +11,7 @@ import dhax from './texts/dhax';
 import takeABreak from './texts/takeABreak';
 
 const Experience = () => (
-  <div id={experience.link}>
-    <Header value={experience.name} />
+  <Section location={experience}>
     <SubSection title="Kiwiplan NZ">
       {kiwiplan}
     </SubSection>
@@ -22,7 +21,7 @@ const Experience = () => (
     <SubSection title="Take a Break">
       {takeABreak}
     </SubSection>
-  </div>
+  </Section>
 );
 
 export default Experience;
