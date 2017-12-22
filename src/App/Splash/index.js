@@ -1,5 +1,7 @@
 import React from 'react';
 
+import { home } from 'lib/locations';
+
 import Title from './Title';
 import SocialMediaContainer from './SocialMediaContainer';
 
@@ -27,7 +29,7 @@ class Splash extends React.Component {
     };
 
     return (
-      <div style={style}>
+      <div style={style} id={home.link}>
         <Title />
         <SocialMediaContainer />
       </div>

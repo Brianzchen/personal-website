@@ -1,6 +1,9 @@
 import React from 'react';
 
 import Header from 'components/Header';
+import Text from 'components/Text';
+
+import { aboutMe } from 'lib/locations';
 
 const text = `
   Self taught Front-end JavaScript developer focused on ReactJS + Redux.
@@ -8,17 +11,12 @@ const text = `
   Advodate for agile and scrum.
 `;
 
-const style = {
-  margin: 'auto',
-  padding: '24px',
-  maxWidth: '500px',
-  whiteSpace: 'pre-line',
-};
-
 const AboutMe = () => (
-  <div style={style}>
-    <Header value="About Me" />
-    {text}
+  <div id={aboutMe.link}>
+    <Header value={aboutMe.name} />
+    <Text>
+      {text}
+    </Text>
   </div>
 );
 
