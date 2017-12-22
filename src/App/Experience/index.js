@@ -6,17 +6,21 @@ import { experience } from 'lib/locations';
 
 import SubSection from './SubSection';
 
-import kiwiplanText from './kiwiplanText';
-import dhaxText from './dhaxText';
+import kiwiplan from './texts/kiwiplan';
+import dhax from './texts/dhax';
+import takeABreak from './texts/takeABreak';
 
 const Experience = () => (
   <div id={experience.link}>
     <Header value={experience.name} />
     <SubSection title="Kiwiplan NZ">
-      {kiwiplanText}
+      {kiwiplan}
     </SubSection>
     <SubSection title="Dhax">
-      {dhaxText}
+      {dhax}
+    </SubSection>
+    <SubSection title="Take a Break">
+      {takeABreak}
     </SubSection>
   </div>
 );
