@@ -5,6 +5,7 @@ import Splash from './Splash';
 import AboutMe from './AboutMe';
 import Experience from './Experience';
 import Skillset from './Skillset';
+import Education from './Education';
 import Footer from './Footer';
 
 const style = {
@@ -17,6 +18,7 @@ const App = () => (
     <AboutMe />
     <Experience />
     <Skillset />
+    <Education />
     <Footer />
   </div>
 );

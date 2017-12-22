@@ -15,4 +15,8 @@ module.exports = {
     name: 'Skillset',
     link: 'skillset',
   },
+  education: {
+    name: 'Education',
+    link: 'education',
+  },
 };
