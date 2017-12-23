@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import NavBar from './NavBar';
 import Splash from './Splash';
@@ -17,6 +18,12 @@ class App extends React.Component {
     };
 
     window.addEventListener('resize', this.resize);
+  }
+
+  getChildContext() {
+    return {
+      navBarHeight: this.state.navBarHeight,
+    };
   }
 
   componentWillUnmount() {
@@ -48,5 +55,9 @@ class App extends React.Component {
     );
   }
 }
+
+App.childContextTypes = {
+  navBarHeight: PropTypes.number,
+};
 
 export default App;

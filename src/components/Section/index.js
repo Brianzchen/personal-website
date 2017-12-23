@@ -3,9 +3,9 @@ import PropTypes from 'prop-types';
 
 import Header from 'components/Header';
 
-const Section = props => {
+const Section = (props, context) => {
   const style = {
-    paddingTop: '48px', // TODO use context
+    paddingTop: `${context.navBarHeight}px`,
   };
 
   return (
@@ -14,6 +14,10 @@ const Section = props => {
       {props.children}
     </div>
   );
+};
+
+Section.contextTypes = {
+  navBarHeight: PropTypes.number,
 };
 
 Section.propTypes = {
