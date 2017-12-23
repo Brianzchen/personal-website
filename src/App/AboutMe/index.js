@@ -9,6 +9,10 @@ const text = `
   Self taught Front-end JavaScript developer focused on ReactJS + Redux.
 
   Advodate for agile and scrum.
+
+  My interests outside of coding inclde lifting heavy weights, window shopping, eating lots of food and of course, Sharon Wang.
+
+  My greatest weakness in my opinion is my inability to give variables good names.
 `;
 
 const AboutMe = () => (

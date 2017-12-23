@@ -4,13 +4,14 @@ import PropTypes from 'prop-types';
 import Header from 'components/Header';
 
 const Section = props => (
-  <div id={props.location.link}>
+  <div style={props.style} id={props.location.link}>
     <Header value={props.location.name} />
     {props.children}
   </div>
 );
 
 Section.propTypes = {
+  style: PropTypes.object,
   location: PropTypes.shape({
     name: PropTypes.string.isRequired,
     link: PropTypes.string.isRequired,
@@ -19,6 +20,7 @@ Section.propTypes = {
 };
 
 Section.defaultProps = {
+  style: {},
   children: null,
 };
 
