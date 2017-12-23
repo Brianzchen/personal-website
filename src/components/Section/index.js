@@ -5,7 +5,7 @@ import Header from 'components/Header';
 
 const Section = props => {
   const style = {
-    padding: '48px', // TODO use context
+    paddingTop: '48px', // TODO use context
   };
 
   return (
