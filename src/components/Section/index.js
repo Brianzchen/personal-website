@@ -3,12 +3,18 @@ import PropTypes from 'prop-types';
 
 import Header from 'components/Header';
 
-const Section = props => (
-  <div style={props.style} id={props.location.link}>
-    <Header value={props.location.name} />
-    {props.children}
-  </div>
-);
+const Section = props => {
+  const style = {
+    padding: '48px', // TODO use context
+  };
+
+  return (
+    <div style={{ ...style, ...props.style }} id={props.location.link}>
+      <Header value={props.location.name} />
+      {props.children}
+    </div>
+  );
+};
 
 Section.propTypes = {
   style: PropTypes.object,

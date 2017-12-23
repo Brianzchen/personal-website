@@ -8,19 +8,45 @@ import Skillset from './Skillset';
 import Education from './Education';
 import Footer from './Footer';
 
-const style = {
-};
+class App extends React.Component {
+  constructor(props) {
+    super(props);
 
-const App = () => (
-  <div style={style}>
-    <NavBar />
-    <Splash />
-    <AboutMe />
-    <Experience />
-    <Skillset />
-    <Education />
-    <Footer />
-  </div>
-);
+    this.state = {
+      navBarHeight: 0,
+    };
+
+    window.addEventListener('resize', this.resize);
+  }
+
+  componentWillUnmount() {
+    window.removeEventListene('resize', this.resize);
+  }
+
+  navBarMounted = navBarHeight => {
+    this.setState({ navBarHeight });
+  }
+
+  resize = () => {
+    this.setState({ navBarHeight: this.navBar.offsetHeight });
+  }
+
+  render() {
+    return (
+      <div>
+        <NavBar
+          ref={o => { if (o !== null) this.navBar = o.container; }}
+          setNavBarHeight={this.navBarMounted}
+        />
+        <Splash />
+        <AboutMe />
+        <Experience />
+        <Skillset />
+        <Education />
+        <Footer />
+      </div>
+    );
+  }
+}
 
 export default App;
