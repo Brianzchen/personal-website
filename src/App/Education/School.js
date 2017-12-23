@@ -3,12 +3,18 @@ import PropTypes from 'prop-types';
 
 const School = props => (
   <div>
-    {props.name}
+    <p>
+      {props.name}
+    </p>
+    <p>
+      {props.studies}
+    </p>
   </div>
 );
 
 School.propTypes = {
   name: PropTypes.string.isRequired,
+  studies: PropTypes.string.isRequired,
 };
 
 export default School;
