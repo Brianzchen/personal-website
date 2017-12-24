@@ -11,8 +11,16 @@ const style = {
 
 const SocialMediaContainer = () => (
   <div style={style}>
-    <Button icon="github" title="Github" />
-    <Button icon="linkedin" title="Linkedin" />
+    <Button
+      icon="github-circle"
+      title="Github"
+      link="https://github.com/Brianzchen"
+    />
+    <Button
+      icon="linkedin-box"
+      title="Linkedin"
+      link="https://www.linkedin.com/in/brianzchen/"
+    />
   </div>
 );
 

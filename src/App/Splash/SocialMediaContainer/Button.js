@@ -2,25 +2,31 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const style = {
+  margin: '8px',
   display: 'flex',
   justifyContent: 'center',
   alignItems: 'center',
-  margin: '8px',
+  fontSize: '24px',
+  cursor: 'pointer',
 };
 
 const Button = props => (
-  <div
+  <a
     style={style}
-    className={`mdi mdi-${props.icon}`}
-    title={props.title}
+    href={props.link}
+    target="_blank"
   >
-    B
-  </div>
+    <i
+      className={`mdi mdi-${props.icon}`}
+      title={props.title}
+    />
+  </a>
 );
 
 Button.propTypes = {
   icon: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
+  link: PropTypes.string.isRequired,
 };
 
 export default Button;

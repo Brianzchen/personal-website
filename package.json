@@ -10,6 +10,7 @@
   "private": true,
   "dependencies": {
     "lodash": "^4.17.4",
+    "mdi": "^2.1.19",
     "prop-types": "^15.6.0",
     "radium": "^0.19.6",
     "react": "^16.2.0",

@@ -16,14 +16,9 @@ class ProgressBar extends React.Component {
   }
 
   scroll = () => {
-    if (!this.settingState) {
-      this.settingState = true;
-      this.setState({
-        progress: (window.scrollY / (document.body.offsetHeight - window.innerHeight)) * 100,
-      }, () => {
-        this.settingState = false;
-      });
-    }
+    this.setState({
+      progress: (window.scrollY / (document.body.offsetHeight - window.innerHeight)) * 100,
+    });
   }
 
   render() {
@@ -47,7 +42,7 @@ class ProgressBar extends React.Component {
         <div style={styles.bar} />
       </div>
     );
-  };
+  }
 }
 
 export default ProgressBar;
