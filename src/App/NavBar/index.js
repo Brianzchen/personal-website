@@ -5,6 +5,7 @@ import { map } from 'lodash';
 import locations from 'lib/locations';
 
 import Link from './Link';
+import ProgressBar from './ProgressBar';
 
 class NavBar extends React.Component {
   componentDidMount() {
@@ -34,6 +35,7 @@ class NavBar extends React.Component {
             ),
           )
         }
+        <ProgressBar />
       </div>
     );
   }
