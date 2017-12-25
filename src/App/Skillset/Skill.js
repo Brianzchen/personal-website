@@ -9,7 +9,7 @@ const style = {
 };
 
 const Skill = props => (
-  <span style={style}>
+  <span style={style} className="box-shadow">
     {props.name}
   </span>
 );
