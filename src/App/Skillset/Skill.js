@@ -5,7 +5,7 @@ const style = {
   borderRadius: '99px',
   padding: '4px 12px',
   margin: '2px 4px',
-  background: 'aqua', // TODO replace
+  background: '#15e2d1', // TODO replace
 };
 
 const Skill = props => (

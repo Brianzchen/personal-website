@@ -18,7 +18,7 @@ const Skillset = () => (
     <Skill name="JavaScript" />
     <Skill name="ReactJS" />
     <Skill name="Redux" />
-    <Skill name="client-side routing" />
+    <Skill name="Client-side routing" />
     <Skill name="HTML" />
     <Skill name="CSS3" />
   </Section>
