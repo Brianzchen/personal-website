@@ -2,7 +2,6 @@ import React from 'react';
 
 const style = {
   fontSize: '48px',
-  color: '#333333',
   marginBottom: 0,
 };
 

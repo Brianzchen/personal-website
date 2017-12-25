@@ -27,6 +27,7 @@ class Splash extends React.Component {
       flexDirection: 'column',
       height: `${window.innerHeight}px`,
       background: '#eeeeee', // TODO replace with image
+      color: '#333333', // TODO choose color in lib?
       paddingTop: `${this.context.navBarHeight}px`,
       boxSizing: 'border-box',
     };

@@ -1,7 +1,6 @@
 import React from 'react';
 
 const style = {
-  color: '#333333',
 };
 
 const SubTitle = () => (
