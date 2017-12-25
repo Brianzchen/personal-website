@@ -6,8 +6,15 @@ import { skillset } from 'lib/locations';
 
 import Skill from './Skill';
 
+const style = {
+
+};
+
 const Skillset = () => (
-  <Section location={skillset}>
+  <Section
+    style={style}
+    location={skillset}
+  >
     <Skill name="JavaScript" />
     <Skill name="ReactJS" />
     <Skill name="Redux" />
