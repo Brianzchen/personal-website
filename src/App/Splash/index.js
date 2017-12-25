@@ -25,7 +25,7 @@ class Splash extends React.Component {
       display: 'flex',
       flexDirection: 'column',
       height: `${window.innerHeight}px`,
-      background: '#ffa71a', // TODO replace with image
+      background: '#eeeeee', // TODO replace with image
     };
 
     return (
