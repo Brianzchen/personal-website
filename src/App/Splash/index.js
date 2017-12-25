@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import { home } from 'lib/locations';
 
@@ -26,6 +27,8 @@ class Splash extends React.Component {
       flexDirection: 'column',
       height: `${window.innerHeight}px`,
       background: '#eeeeee', // TODO replace with image
+      paddingTop: `${this.context.navBarHeight}px`,
+      boxSizing: 'border-box',
     };
 
     return (
@@ -36,5 +39,9 @@ class Splash extends React.Component {
     );
   }
 }
+
+Splash.contextTypes = {
+  navBarHeight: PropTypes.number,
+};
 
 export default Splash;

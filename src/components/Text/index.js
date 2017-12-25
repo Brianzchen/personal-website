@@ -11,6 +11,7 @@ const style = {
 const Text = props => (
   <div style={style}>
     {props.children}
+    <hr />
   </div>
 );
 

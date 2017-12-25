@@ -12,7 +12,6 @@ const Section = (props, context) => {
     <div style={{ ...style, ...props.style }} id={props.location.link}>
       <Header value={props.location.name} />
       {props.children}
-      <hr />
     </div>
   );
 };
