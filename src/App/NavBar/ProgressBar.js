@@ -4,10 +4,6 @@ class ProgressBar extends React.Component {
   constructor(props) {
     super(props);
 
-    this.state = {
-      progress: 0,
-    };
-
     window.addEventListener('scroll', this.scroll);
   }
 
@@ -16,12 +12,12 @@ class ProgressBar extends React.Component {
   }
 
   scroll = () => {
-    this.setState({
-      progress: (window.scrollY / (document.body.offsetHeight - window.innerHeight)) * 100,
-    });
+    this.forceUpdate();
   }
 
   render() {
+    const progress = (window.scrollY / (document.body.offsetHeight - window.innerHeight)) * 100;
+
     const styles = {
       container: {
         position: 'absolute',
@@ -32,7 +28,7 @@ class ProgressBar extends React.Component {
       },
       bar: {
         height: '100%',
-        width: `${this.state.progress}%`,
+        width: `${progress}%`,
         backgroundColor: 'black', // TODO color
       },
     };
