@@ -1,5 +1,7 @@
 import React from 'react';
 
+import colors from 'lib/colors';
+
 class ProgressBar extends React.Component {
   constructor(props) {
     super(props);
@@ -29,7 +31,7 @@ class ProgressBar extends React.Component {
       bar: {
         height: '100%',
         width: `${progress}%`,
-        backgroundColor: 'black', // TODO color
+        backgroundColor: colors.secondary,
       },
     };
 

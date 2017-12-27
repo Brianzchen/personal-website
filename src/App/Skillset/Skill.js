@@ -1,12 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+import colors from 'lib/colors';
+
 const style = {
   display: 'inline-block',
   borderRadius: '99px',
   padding: '4px 12px',
   margin: '4px',
-  background: '#15e2d1', // TODO replace
+  color: colors.white,
+  background: colors.primary,
   whiteSpace: 'nowrap',
 };
 

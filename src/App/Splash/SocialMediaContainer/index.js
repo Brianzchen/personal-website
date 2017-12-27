@@ -1,11 +1,13 @@
 import React from 'react';
 
+import colors from 'lib/colors';
+
 import Button from './Button';
 
 const style = {
   display: 'flex',
   margin: '24px auto',
-  backgroundColor: 'white', // TODO color
+  backgroundColor: colors.white,
   borderRadius: '4px',
 };
 

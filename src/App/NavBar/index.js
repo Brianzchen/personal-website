@@ -1,11 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { map } from 'lodash';
+import hexRgb from 'hex-rgb';
 
+import colors from 'lib/colors';
 import locations from 'lib/locations';
 
 import Link from './Link';
 import ProgressBar from './ProgressBar';
+
+const hexArray = hexRgb(colors.primary);
 
 class NavBar extends React.Component {
   componentDidMount() {
@@ -22,7 +26,7 @@ class NavBar extends React.Component {
       top: 0,
       left: 0,
       right: 0,
-      background: 'rgba(0, 0, 0, 0.8)', // TODO replace
+      background: `rgba(${hexArray[0]}, ${hexArray[1]}, ${hexArray[2]}, 0.8)`,
     };
 
     return (

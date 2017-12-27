@@ -26,12 +26,10 @@ class Splash extends React.Component {
       display: 'flex',
       flexDirection: 'column',
       height: `${window.innerHeight}px`,
-      // background: '#eeeeee', // TODO replace with image
       backgroundImage: 'url("public/images/splash.jpg")',
       backgroundSize: 'cover',
       backgroundPosition: 'center',
       backgroundAttachment: 'fixed',
-      color: '#333333', // TODO choose color in lib?
       paddingTop: `${this.context.navBarHeight}px`,
       boxSizing: 'border-box',
     };

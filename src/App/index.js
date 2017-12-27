@@ -1,6 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+import colors from 'lib/colors';
+
 import NavBar from './NavBar';
 import Splash from './Splash';
 import AboutMe from './AboutMe';
@@ -39,8 +41,12 @@ class App extends React.Component {
   }
 
   render() {
+    const style = {
+      color: colors.content,
+    };
+
     return (
-      <div>
+      <div style={style}>
         <NavBar
           ref={o => { if (o !== null) this.navBar = o.container; }}
           setNavBarHeight={this.navBarMounted}

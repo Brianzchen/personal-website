@@ -6,6 +6,7 @@ import Header from 'components/Header';
 const Section = (props, context) => {
   const style = {
     paddingTop: `${context.navBarHeight}px`,
+    margin: '8px',
   };
 
   return (
