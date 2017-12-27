@@ -4,13 +4,13 @@ import Button from './Button';
 
 const style = {
   display: 'flex',
-  justifyContent: 'center',
-  alignItems: 'center',
-  padding: '24px',
+  margin: '24px auto',
+  backgroundColor: 'white', // TODO color
+  borderRadius: '4px',
 };
 
 const SocialMediaContainer = () => (
-  <div style={style}>
+  <div style={style} className="box-shadow">
     <Button
       icon="github-circle"
       title="Github"
