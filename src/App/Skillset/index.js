@@ -7,7 +7,6 @@ import { skillset } from 'lib/locations';
 import Skill from './Skill';
 
 const style = {
-
 };
 
 const Skillset = () => (
@@ -19,7 +18,7 @@ const Skillset = () => (
     <Skill name="ReactJS" />
     <Skill name="Redux" />
     <Skill name="Client-side routing" />
-    <Skill name="HTML" />
+    <Skill name="HTML5" />
     <Skill name="CSS3" />
   </Section>
 );

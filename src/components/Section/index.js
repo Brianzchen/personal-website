@@ -9,9 +9,14 @@ const Section = (props, context) => {
   };
 
   return (
-    <div style={{ ...style, ...props.style }} id={props.location.link}>
+    <div
+      style={{ ...style, ...props.style }}
+      className="max-width"
+      id={props.location.link}
+    >
       <Header value={props.location.name} />
       {props.children}
+      <hr />
     </div>
   );
 };
