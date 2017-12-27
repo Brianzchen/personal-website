@@ -12,7 +12,7 @@ const text = `
 
   My interests outside of coding inclde lifting heavy weights, window shopping, eating lots of food and of course, Sharon Wang.
 
-  My greatest weakness in my opinion is my inability to give variables good names.
+  My greatest weakness in my opinion is naming variables.
 `;
 
 const AboutMe = () => (

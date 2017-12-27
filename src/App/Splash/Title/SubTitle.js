@@ -3,7 +3,7 @@ import React from 'react';
 import colors from 'lib/colors';
 
 const style = {
-  color: colors.secondary,
+  color: colors.primary,
 };
 
 const SubTitle = () => (

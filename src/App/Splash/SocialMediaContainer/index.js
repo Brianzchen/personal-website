@@ -7,6 +7,7 @@ import Button from './Button';
 const style = {
   display: 'flex',
   margin: '24px auto',
+  padding: '0 8px',
   backgroundColor: colors.white,
   borderRadius: '4px',
 };

@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const style = {
-  margin: '8px',
+  margin: '8px 4px',
   display: 'flex',
   justifyContent: 'center',
   alignItems: 'center',
