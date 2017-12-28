@@ -12,7 +12,7 @@ const style = {
 
 const SubSection = props => (
   <div style={style}>
-    <Title value={props.title} />
+    <Title value={props.title} link={props.link} />
     <Body value={props.children} />
   </div>
 );
@@ -20,6 +20,7 @@ const SubSection = props => (
 SubSection.propTypes = {
   title: PropTypes.node.isRequired,
   children: PropTypes.node.isRequired,
+  link: PropTypes.string.isRequired,
 };
 
 export default SubSection;

@@ -1,14 +1,21 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+const style = {
+  textDecoration: 'underline',
+};
+
 const Title = props => (
-  <h3>
-    {props.value}
-  </h3>
+  <a href={props.link} target="_blank">
+    <h3 style={style}>
+      {props.value}
+    </h3>
+  </a>
 );
 
 Title.propTypes = {
   value: PropTypes.string.isRequired,
+  link: PropTypes.string.isRequired,
 };
 
 export default Title;

@@ -12,13 +12,22 @@ import takeABreak from './texts/takeABreak';
 
 const Experience = () => (
   <Section location={experience}>
-    <SubSection title="Kiwiplan NZ">
+    <SubSection
+      title="Kiwiplan NZ"
+      link="http://www.kiwiplan.com/"
+    >
       {kiwiplan}
     </SubSection>
-    <SubSection title="Dhax">
+    <SubSection
+      title="Dhax"
+      link="https://dhax.surge.sh/"
+    >
       {dhax}
     </SubSection>
-    <SubSection title="Take a Break">
+    <SubSection
+      title="Take a Break"
+      link="https://brianzchen.github.io/take-a-break/"
+    >
       {takeABreak}
     </SubSection>
   </Section>
