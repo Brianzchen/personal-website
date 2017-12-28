@@ -12,7 +12,8 @@ const getAge = () => {
 };
 
 const style = {
-  marginLeft: '64px',
+  marginLeft: '32px',
+  marginRight: 'auto',
 };
 
 const Info = () => (
