@@ -5,6 +5,8 @@ import Text from 'components/Text';
 
 import { aboutMe } from 'lib/locations';
 
+import Details from './Details';
+
 const text = `
   Self taught Front-end JavaScript developer focused on ReactJS + Redux.
 
@@ -17,6 +19,7 @@ const text = `
 
 const AboutMe = () => (
   <Section location={aboutMe}>
+    <Details />
     <Text>
       {text}
     </Text>
