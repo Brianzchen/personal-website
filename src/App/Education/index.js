@@ -10,11 +10,9 @@ const Education = () => (
   <Section location={education}>
     <School
       name="University of Auckland"
-      studies="Bachelor of Science: Double major in Computer Science and Statisics"
-    />
-    <School
-      name="Udacity"
-      studies="Front-end web developer Nanodegree"
+      location="Auckland, NZ"
+      dateRange="2012 - 2015"
+      studies="Bachelor of Science: Computer Science and Statisics"
     />
   </Section>
 );
