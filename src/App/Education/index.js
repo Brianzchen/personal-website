@@ -12,7 +12,7 @@ const Education = () => (
       name="University of Auckland"
       location="Auckland, NZ"
       dateRange="2012 - 2015"
-      studies="Bachelor of Science: Computer Science and Statisics"
+      studies="Computer Science and Statisics"
     />
   </Section>
 );

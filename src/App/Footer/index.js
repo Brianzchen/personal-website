@@ -1,23 +1,22 @@
 import React from 'react';
 
+import Copyright from './Copyright';
+import SourceCode from './SourceCode';
+
 const style = {
   display: 'flex',
+  flexDirection: 'column',
   justifyContent: 'center',
-  alignItems: 'center',
-  height: '64px',
+  padding: '16px',
+  textAlign: 'right',
+  fontSize: '12px',
+  boxSizing: 'border-box',
 };
 
 const Footer = () => (
   <div style={style}>
-    <a
-      href="https://github.com/Brianzchen/personal-website"
-      target="_blank"
-      rel="noopener noreferrer"
-    >
-      <i>
-        Source code
-      </i>
-    </a>
+    <Copyright />
+    <SourceCode />
   </div>
 );
 
