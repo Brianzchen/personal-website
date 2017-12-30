@@ -8,6 +8,7 @@ const style = {
   display: 'flex',
   margin: '24px auto',
   padding: '0 8px',
+  color: colors.primary,
   backgroundColor: colors.white,
   borderRadius: '4px',
 };
