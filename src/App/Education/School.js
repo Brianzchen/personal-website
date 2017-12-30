@@ -6,6 +6,7 @@ import colors from 'lib/colors';
 const styles = {
   container: {
     display: 'flex',
+    justifyContent: 'space-between',
   },
   name: {
     fontWeight: 'bold',

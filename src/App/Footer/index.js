@@ -14,7 +14,7 @@ const style = {
 };
 
 const Footer = () => (
-  <div style={style}>
+  <div style={style} className="max-width">
     <Copyright />
     <SourceCode />
   </div>
