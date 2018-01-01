@@ -20,7 +20,7 @@ class Photo extends React.Component {
     const container = this.container.getBoundingClientRect();
 
     if (container.y > window.innerHeight / 2) {
-      this.setState({ scale: 1.5 });
+      this.setState({ scale: 1.4 });
     } else {
       this.setState({ scale: 1 });
     }

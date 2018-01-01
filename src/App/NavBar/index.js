@@ -26,7 +26,8 @@ class NavBar extends React.Component {
       top: 0,
       left: 0,
       right: 0,
-      background: `rgba(${hexArray[0]}, ${hexArray[1]}, ${hexArray[2]}, 0.8)`,
+      background: `rgba(${hexArray[0]}, ${hexArray[1]}, ${hexArray[2]}, 0.6)`,
+      zIndex: 1500,
     };
 
     return (
