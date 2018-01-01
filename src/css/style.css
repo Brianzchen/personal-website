@@ -43,7 +43,13 @@ hr {
 }
 
 .fade-in {
-  animation: fade-in 3s ease-in 1s;
+  animation: fade-in 1s ease-in 0.2s;
+  animation-fill-mode: both;
+}
+
+.float-in {
+  position: relative;
+  animation: float-in 1s ease-out 0.2s;
   animation-fill-mode: both;
 }
 
@@ -53,5 +59,14 @@ hr {
   }
   100% {
     opacity: 1;
+  }
+}
+
+@keyframes float-in {
+  0% {
+    top: -100%;
+  }
+  100% {
+    top: 0;
   }
 }

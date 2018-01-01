@@ -31,7 +31,11 @@ class NavBar extends React.Component {
     };
 
     return (
-      <div ref={o => { this.container = o; }} style={style}>
+      <div
+        ref={o => { this.container = o; }}
+        style={style}
+        className="float-in"
+      >
         {
           map(
             locations,

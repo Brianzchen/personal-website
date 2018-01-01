@@ -13,7 +13,10 @@ const style = {
 };
 
 const SocialMediaContainer = () => (
-  <div style={style} className="box-shadow">
+  <div
+    style={style}
+    className="box-shadow fade-in"
+  >
     <Button
       icon="github-circle"
       title="Github"
