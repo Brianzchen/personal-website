@@ -12,7 +12,7 @@ const style = {
 };
 
 const Title = () => (
-  <div style={style}>
+  <div style={style} className="fade-in">
     <Name />
     <SubTitle />
   </div>
