@@ -18,11 +18,17 @@ class Photo extends React.Component {
 
   scroll = () => {
     const container = this.container.getBoundingClientRect();
+    const base = 1;
+    const maxAdd = 0.4;
+    const lowestPoint = window.innerHeight / 1.5;
 
-    if (container.y > window.innerHeight / 2) {
-      this.setState({ scale: 1.4 });
+    if (container.y <= 0) {
+      this.setState({ scale: base });
+    } else if (container.y > lowestPoint) {
+      this.setState({ scale: base + maxAdd });
     } else {
-      this.setState({ scale: 1 });
+      const ratio = (container.y / (lowestPoint)) * maxAdd;
+      this.setState({ scale: base + ratio });
     }
   }
 
@@ -43,9 +49,6 @@ class Photo extends React.Component {
         background: 'url("public/images/test.jpg")',
         backgroundSize: 'cover',
         backgroundPosition: 'center',
-        MozTransition: 'transform 0.3s',
-        WebkitTransition: 'transform 0.3s',
-        transition: 'transform 0.3s',
         MozTransform: transform,
         WebkitTransform: transform,
         transform,
