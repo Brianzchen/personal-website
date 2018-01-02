@@ -11,7 +11,10 @@ const style = {
 };
 
 const SubSection = props => (
-  <div style={style}>
+  <div
+    style={style}
+    className="max-width"
+  >
     <Title value={props.title} link={props.link} />
     <Body value={props.children} />
   </div>

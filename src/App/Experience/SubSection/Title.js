@@ -6,7 +6,10 @@ const style = {
 };
 
 const Title = props => (
-  <a href={props.link} target="_blank">
+  <a
+    href={props.link}
+    target="_blank"
+  >
     <h3 style={style}>
       {props.value}
     </h3>

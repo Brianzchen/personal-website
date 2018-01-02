@@ -22,12 +22,12 @@ class Photo extends React.Component {
     const maxAdd = 0.4;
     const lowestPoint = window.innerHeight / 1.5;
 
-    if (container.y <= 0) {
+    if (container.top <= 0) {
       this.setState({ scale: base });
-    } else if (container.y > lowestPoint) {
+    } else if (container.top > lowestPoint) {
       this.setState({ scale: base + maxAdd });
     } else {
-      const ratio = (container.y / (lowestPoint)) * maxAdd;
+      const ratio = (container.top / (lowestPoint)) * maxAdd;
       this.setState({ scale: base + ratio });
     }
   }
