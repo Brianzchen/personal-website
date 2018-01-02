@@ -7,6 +7,7 @@ const style = {
   padding: '0 4px',
   height: '48px',
   color: 'white',
+  fontSize: '13px',
 };
 
 const Link = props => (
@@ -14,7 +15,7 @@ const Link = props => (
     style={style}
     href={`#${props.link}`}
   >
-    {props.name}
+    {props.name.toUpperCase()}
   </a>
 );
 
