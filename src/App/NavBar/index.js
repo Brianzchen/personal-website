@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { map } from 'lodash';
-import hexRgb from 'hex-rgb';
 
 import colors from 'lib/colors';
 import locations from 'lib/locations';
@@ -9,11 +8,27 @@ import locations from 'lib/locations';
 import Link from './Link';
 import ProgressBar from './ProgressBar';
 
-const hexArray = hexRgb(colors.primary);
-
 class NavBar extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      scrolled: false,
+    };
+
+    window.addEventListener('scroll', this.scroll);
+  }
+
   componentDidMount() {
     this.props.setNavBarHeight(this.container.offsetHeight);
+  }
+
+  scroll = () => {
+    if (window.scrollY > 0 && !this.state.scrolled) {
+      this.setState({ scrolled: true });
+    } else if (window.scrollY === 0) {
+      this.setState({ scrolled: false });
+    }
   }
 
   render() {
@@ -26,7 +41,7 @@ class NavBar extends React.Component {
       top: 0,
       left: 0,
       right: 0,
-      background: `rgba(${hexArray[0]}, ${hexArray[1]}, ${hexArray[2]}, 0.6)`,
+      background: colors.primary,
       zIndex: 1500,
     };
 
@@ -34,7 +49,7 @@ class NavBar extends React.Component {
       <div
         ref={o => { this.container = o; }}
         style={style}
-        className="float-in"
+        className={`float-in ${this.state.scrolled ? 'box-shadow' : ''}`}
       >
         {
           map(
