@@ -46,7 +46,7 @@ class Photo extends React.Component {
       img: {
         height: '100%',
         width: '100%',
-        background: 'url("public/images/test.jpg")',
+        background: 'url("public/images/profile.jpg")',
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         MozTransform: transform,
