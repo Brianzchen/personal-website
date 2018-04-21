@@ -1,21 +1,25 @@
 import React from 'react';
+import { StyleSheet, css } from 'aphrodite';
+
+import { boxShadow } from 'css';
 
 import colors from 'lib/colors';
 
 import Button from './Button';
 
-const style = {
-  display: 'flex',
-  margin: '24px auto',
-  padding: '0 8px',
-  backgroundColor: colors.white,
-  borderRadius: '4px',
-};
+const styles = StyleSheet.create({
+  container: {
+    display: 'flex',
+    margin: '24px auto',
+    padding: '0 8px',
+    backgroundColor: colors.white,
+    borderRadius: '4px',
+  },
+});
 
 const SocialMediaContainer = () => (
   <div
-    style={style}
-    className="box-shadow fade-in"
+    className={`fade-in ${css(styles.container, boxShadow)}`}
   >
     <Button
       icon="github-circle"

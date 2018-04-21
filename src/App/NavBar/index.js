@@ -1,6 +1,8 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import { StyleSheet, css } from 'aphrodite';
 import { get, map } from 'lodash';
+
+import { boxShadow } from 'css';
 
 import colors from 'lib/colors';
 import locations from 'lib/locations';
@@ -13,16 +15,12 @@ class NavBar extends React.Component {
     super(props);
 
     this.state = {
-      scrolled: false,
+      scrolledPastTop: false,
       hideNavBar: false,
     };
 
     this.scrollPos = 0;
     window.addEventListener('scroll', this.scroll);
-  }
-
-  componentDidMount() {
-    this.props.setNavBarHeight(this.container.offsetHeight);
   }
 
   componentWillUnmount() {
@@ -36,10 +34,10 @@ class NavBar extends React.Component {
     });
     this.scrollPos = scrollPos;
 
-    if (window.scrollY > 0 && !this.state.scrolled) {
-      this.setState({ scrolled: true });
+    if (window.scrollY > 0 && !this.state.scrolledPastTop) {
+      this.setState({ scrolledPastTop: true });
     } else if (window.scrollY === 0) {
-      this.setState({ scrolled: false });
+      this.setState({ scrolledPastTop: false });
     }
   }
 
@@ -55,29 +53,32 @@ class NavBar extends React.Component {
       },
     };
 
-    const style = {
-      display: 'flex',
-      flexWrap: 'wrap',
-      alignItems: 'center',
-      position: 'fixed',
-      padding: '0 8px',
-      top,
-      left: 0,
-      right: 0,
-      background: colors.primary,
-      zIndex: 1500,
-      animationName: [floatInKeyFrame],
-      animationDuration: '1s',
-      animationTimingFunction: 'ease-out',
-      animationDelay: '0.2s',
-      animationFillMode: 'both',
-    };
+    const styles = StyleSheet.create({
+      container: {
+        display: 'flex',
+        flexWrap: 'wrap',
+        alignItems: 'center',
+        position: 'fixed',
+        padding: '0 8px',
+        top,
+        left: 0,
+        right: 0,
+        background: colors.primary,
+        zIndex: 1500,
+        animationName: [floatInKeyFrame],
+        animationDuration: '1s',
+        animationTimingFunction: 'ease-out',
+        animationDelay: '0.2s',
+        animationFillMode: 'both',
+      },
+    });
 
     return (
       <div
         ref={o => { this.container = o; }}
-        style={style}
-        className={`float-in ${this.state.scrolled ? 'box-shadow' : ''}`}
+        className={
+          `float-in ${css(styles.container, this.state.scrolledPastTop && boxShadow)}`
+        }
       >
         {
           map(
@@ -92,9 +93,5 @@ class NavBar extends React.Component {
     );
   }
 }
-
-NavBar.propTypes = {
-  setNavBarHeight: PropTypes.func.isRequired,
-};
 
 export default NavBar;

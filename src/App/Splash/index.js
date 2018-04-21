@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 
 import { home } from 'lib/locations';
 
@@ -30,7 +29,6 @@ class Splash extends React.Component {
       backgroundSize: 'cover',
       backgroundPosition: 'center',
       backgroundAttachment: 'fixed',
-      paddingTop: `${this.context.navBarHeight}px`,
       boxSizing: 'border-box',
     };
 
@@ -42,9 +40,5 @@ class Splash extends React.Component {
     );
   }
 }
-
-Splash.contextTypes = {
-  navBarHeight: PropTypes.number,
-};
 
 export default Splash;

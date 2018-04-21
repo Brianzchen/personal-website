@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 
 import colors from 'lib/colors';
 
@@ -11,59 +10,20 @@ import Skillset from './Skillset';
 import Education from './Education';
 import Footer from './Footer';
 
-class App extends React.Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      navBarHeight: 0,
-    };
-
-    window.addEventListener('resize', this.resize);
-  }
-
-  getChildContext() {
-    return {
-      navBarHeight: this.state.navBarHeight,
-    };
-  }
-
-  componentWillUnmount() {
-    window.removeEventListene('resize', this.resize);
-  }
-
-  navBarMounted = navBarHeight => {
-    this.setState({ navBarHeight });
-  }
-
-  resize = () => {
-    this.setState({ navBarHeight: this.navBar.offsetHeight });
-  }
-
-  render() {
-    const style = {
-      color: colors.content,
-    };
-
-    return (
-      <div style={style}>
-        <NavBar
-          ref={o => { if (o !== null) this.navBar = o.container; }}
-          setNavBarHeight={this.navBarMounted}
-        />
-        <Splash />
-        <AboutMe />
-        <Experience />
-        <Skillset />
-        <Education />
-        <Footer />
-      </div>
-    );
-  }
-}
-
-App.childContextTypes = {
-  navBarHeight: PropTypes.number,
+const style = {
+  color: colors.content,
 };
+
+const App = () => (
+  <div style={style}>
+    <NavBar />
+    <Splash />
+    <AboutMe />
+    <Experience />
+    <Skillset />
+    <Education />
+    <Footer />
+  </div>
+);
 
 export default App;
