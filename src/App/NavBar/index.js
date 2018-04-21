@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { map } from 'lodash';
+import { get, map } from 'lodash';
 
 import colors from 'lib/colors';
 import locations from 'lib/locations';
@@ -14,8 +14,10 @@ class NavBar extends React.Component {
 
     this.state = {
       scrolled: false,
+      hideNavBar: false,
     };
 
+    this.scrollPos = 0;
     window.addEventListener('scroll', this.scroll);
   }
 
@@ -23,7 +25,17 @@ class NavBar extends React.Component {
     this.props.setNavBarHeight(this.container.offsetHeight);
   }
 
+  componentWillUnmount() {
+    window.removeEventListener('scroll', this.scroll);
+  }
+
   scroll = () => {
+    const scrollPos = document.documentElement.scrollTop;
+    this.setState({
+      hideNavBar: this.scrollPos < scrollPos,
+    });
+    this.scrollPos = scrollPos;
+
     if (window.scrollY > 0 && !this.state.scrolled) {
       this.setState({ scrolled: true });
     } else if (window.scrollY === 0) {
@@ -32,17 +44,33 @@ class NavBar extends React.Component {
   }
 
   render() {
+    const top = this.state.hideNavBar ? `-${get(this.container, 'offsetHeight', 0)}px` : 0;
+
+    const floatInKeyFrame = {
+      '0%': {
+        top: '-100%',
+      },
+      '100%': {
+        top,
+      },
+    };
+
     const style = {
       display: 'flex',
       flexWrap: 'wrap',
       alignItems: 'center',
       position: 'fixed',
       padding: '0 8px',
-      top: 0,
+      top,
       left: 0,
       right: 0,
       background: colors.primary,
       zIndex: 1500,
+      animationName: [floatInKeyFrame],
+      animationDuration: '1s',
+      animationTimingFunction: 'ease-out',
+      animationDelay: '0.2s',
+      animationFillMode: 'both',
     };
 
     return (
@@ -55,7 +83,7 @@ class NavBar extends React.Component {
           map(
             locations,
             ({ name, link }) => (
-              <Link key={link} name={name} link={link} />
+              <Link key={link} name={name} link={link} /> // eslint-disable-line
             ),
           )
         }
