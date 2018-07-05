@@ -6,10 +6,12 @@
   "scripts": {
     "clean": "rimraf dist",
     "uglify:css": "uglifycss public/style.css > public/style.min.css",
+    "uglify:html": "html-minifier -o index.html index.example.html",
+    "uglify": "npm run uglify:css && npm run uglify:html",
     "lint": "eslint src",
     "analyze": "npm run clean && cross-env NODE_ENV=production webpack --config webpack/webpack.analyze.js",
-    "start": "npm run uglify:css && webpack-dev-server --config webpack/webpack.dev.js",
-    "build": "npm run uglify:css && npm run clean && cross-env NODE_ENV=production webpack --config webpack/webpack.prod.js",
+    "start": "npm run uglify && webpack-dev-server --config webpack/webpack.dev.js",
+    "build": "npm run uglify && npm run clean && cross-env NODE_ENV=production webpack --config webpack/webpack.prod.js",
     "deploy": "npm run build && surge"
   },
   "author": "",
@@ -41,6 +43,7 @@
     "eslint-plugin-import": "^2.8.0",
     "eslint-plugin-jsx-a11y": "^6.0.3",
     "eslint-plugin-react": "^7.6.1",
+    "html-minifier": "^3.5.18",
     "rimraf": "^2.6.2",
     "uglifycss": "^0.0.29",
     "uglifyjs-webpack-plugin": "^1.1.6",

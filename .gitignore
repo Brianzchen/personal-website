@@ -90,3 +90,4 @@ dist
 
 # minified files
 public/style.min.css
+index.html
