@@ -9,6 +9,7 @@ const Title = props => (
   <a
     href={props.link}
     target="_blank"
+    rel="noopener noreferrer"
   >
     <h3 style={style}>
       {props.value}

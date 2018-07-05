@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "clean": "rimraf dist",
+    "lint": "eslint src",
     "analyze": "npm run clean && cross-env NODE_ENV=production webpack --config webpack/webpack.analyze.js",
     "start": "webpack-dev-server --config webpack/webpack.dev.js",
     "build": "npm run clean && cross-env NODE_ENV=production webpack --config webpack/webpack.prod.js",

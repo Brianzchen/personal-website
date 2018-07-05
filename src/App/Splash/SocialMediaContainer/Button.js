@@ -15,6 +15,7 @@ const Button = props => (
     style={style}
     href={props.link}
     target="_blank"
+    rel="noopener noreferrer"
   >
     <i
       className={`mdi mdi-${props.icon}`}
