@@ -6,7 +6,7 @@
   "scripts": {
     "clean": "rimraf dist",
     "uglify:css": "uglifycss public/style.css > public/style.min.css",
-    "uglify:html": "html-minifier -o index.html index.example.html",
+    "uglify:html": "html-minifier --minify-css --minify-js --remove-comments --collapse-whitespace index.example.html -o index.html",
     "uglify": "npm run uglify:css && npm run uglify:html",
     "lint": "eslint src",
     "analyze": "npm run clean && cross-env NODE_ENV=production webpack --config webpack/webpack.analyze.js",
