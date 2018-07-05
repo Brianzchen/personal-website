@@ -87,3 +87,6 @@ $RECYCLE.BIN/
 dist
 
 # End of https://www.gitignore.io/api/node,windows
+
+# minified files
+public/style.min.css
