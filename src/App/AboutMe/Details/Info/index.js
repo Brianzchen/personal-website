@@ -19,7 +19,7 @@ const style = {
 const Info = () => (
   <div style={style}>
     <Details name="Age" value={getAge()} />
-    <Details name="Location" value="Auckland, NZ" />
+    <Details name="Location" value="Sydney, AU" />
   </div>
 );
 
