@@ -11,16 +11,46 @@
     <meta name="theme-color" content="#065a82">
     <link rel="icon" type="image/png" href="public/images/favicon.ico">
     <link rel="manifest" href="public/manifest.json">
+
+    <!-- CSS lazy loading -->
+    <script>
+    var stylesheet1 = document.createElement('link');
+    stylesheet1.rel = 'stylesheet';
+    stylesheet1.href = '/public/style.min.css';
+    stylesheet1.type = 'text/css';
+    var godefer = document.getElementsByTagName('link')[0];
+    godefer.parentNode.insertBefore(stylesheet1, godefer);
+
+    var stylesheet2 = document.createElement('link');
+    stylesheet2.rel = 'stylesheet';
+    stylesheet2.href = '/public/mdi/css/materialdesignicons.min.css';
+    stylesheet2.type = 'text/css';
+    var godefer2 = document.getElementsByTagName('link')[0];
+    godefer2.parentNode.insertBefore(stylesheet2, godefer2);
+    </script>
+
+    <!-- Fonts -->
+    <script>
+    [
+      'https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js',
+      '/public/scripts/fontLoader.js',
+    ].forEach(function(src) {
+      var script = document.createElement('script');
+      script.src = src;
+      script.async = false;
+      document.head.appendChild(script);
+    });
+    </script>
   </head>
   <body>
     <div id="container"></div>
     <script src="/dist/index.js"></script>
-    <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans|Raleway" rel="stylesheet">
-    <link href="/public/mdi/css/materialdesignicons.min.css" media="all" rel="stylesheet"/>
-    <link href="/public/style.min.css" rel="stylesheet"/>
 
     <noscript>
+      <!-- Fonts fallback -->
+      <link href="/public/style.min.css" rel="stylesheet"/>
+      <link href="/public/mdi/css/materialdesignicons.min.css" media="all" rel="stylesheet"/>
+      <link href="https://fonts.googleapis.com/css?family=Open+Sans|Raleway" rel="stylesheet">
       <style>
         #no-js {
           position: fixed;
