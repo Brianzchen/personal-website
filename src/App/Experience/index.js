@@ -1,36 +1,55 @@
 import React from 'react';
+import uuid from 'uuid/v1';
 
 import Section from 'components/Section';
 
 import { experience } from 'lib/locations';
+import { getList } from 'lib/prismicGateway';
 
 import SubSection from './SubSection';
 
-import kiwiplan from './texts/kiwiplan';
-import dhax from './texts/dhax';
-import takeABreak from './texts/takeABreak';
+class Experience extends React.Component {
+  constructor(props) {
+    super(props);
 
-const Experience = () => (
-  <Section location={experience}>
-    <SubSection
-      title="Kiwiplan NZ"
-      link="http://www.kiwiplan.com/"
-    >
-      {kiwiplan}
-    </SubSection>
-    <SubSection
-      title="Dhax"
-      link="https://dhax.surge.sh/"
-    >
-      {dhax}
-    </SubSection>
-    <SubSection
-      title="Take a Break"
-      link="https://brianzchen.github.io/take-a-break/"
-    >
-      {takeABreak}
-    </SubSection>
-  </Section>
-);
+    this.state = {
+      list: [],
+    };
+
+    getList('experience').then(list => {
+      this.setState({
+        list: list.sort((a, b) => (
+          new Date(b.timestamp).getTime() - new Date(a.timestamp).getTime()
+        )),
+      });
+    });
+  }
+
+  render() {
+    return (
+      <Section location={experience}>
+        {
+          this.state.list.map(exp => (
+            <SubSection
+              key={exp.id}
+              title={exp.title[0].text}
+              link={exp.url.url}
+            >
+              {
+                exp.description.map(o => (
+                  <p
+                    key={uuid()}
+                  >
+                    {o.text}
+                  </p>
+                ))
+              }
+            </SubSection>
+          ))
+        }
+      </Section>
+    );
+  }
+}
 
 export default Experience;
