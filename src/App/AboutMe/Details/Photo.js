@@ -1,5 +1,5 @@
 import React from 'react';
-
+import PropTypes from 'prop-types';
 
 class Photo extends React.Component {
   constructor(props) {
@@ -33,6 +33,8 @@ class Photo extends React.Component {
   }
 
   render() {
+    if (!this.props.url) return null;
+
     const transform = `scale(${this.state.scale})`;
 
     const styles = {
@@ -46,7 +48,7 @@ class Photo extends React.Component {
       img: {
         height: '100%',
         width: '100%',
-        background: 'url("public/images/profile.jpg")',
+        background: `url("${this.props.url}")`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         MozTransform: transform,
@@ -65,5 +67,9 @@ class Photo extends React.Component {
     );
   }
 }
+
+Photo.propTypes = {
+  url: PropTypes.string.isRequired,
+};
 
 export default Photo;
