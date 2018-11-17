@@ -16,12 +16,14 @@ class AboutMe extends React.Component {
 
     this.state = {
       profilePicUrl: '',
+      location: '',
       summary: [],
     };
 
     getSingle('about_me').then(res => {
       this.setState({
         profilePicUrl: res.profile_pic.url,
+        location: res.location[0].text,
         summary: res.summary,
       });
     });
@@ -32,6 +34,7 @@ class AboutMe extends React.Component {
       <Section location={aboutMe}>
         <Details
           profilePicUrl={this.state.profilePicUrl}
+          location={this.state.location}
         />
         <Text>
           {this.state.summary.map(o => (

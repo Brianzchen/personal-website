@@ -15,12 +15,15 @@ const Details = props => (
     <Photo
       url={props.profilePicUrl}
     />
-    <Info />
+    <Info
+      location={props.location}
+    />
   </div>
 );
 
 Details.propTypes = {
   profilePicUrl: PropTypes.string.isRequired,
+  location: PropTypes.string.isRequired,
 };
 
 export default Details;

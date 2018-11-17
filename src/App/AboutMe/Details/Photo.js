@@ -33,8 +33,6 @@ class Photo extends React.Component {
   }
 
   render() {
-    if (!this.props.url) return null;
-
     const transform = `scale(${this.state.scale})`;
 
     const styles = {
@@ -62,7 +60,11 @@ class Photo extends React.Component {
         ref={o => { this.container = o; }}
         style={styles.container}
       >
-        <div style={styles.img} />
+        {
+          this.props.url
+            ? <div style={styles.img} />
+            : null
+        }
       </div>
     );
   }
