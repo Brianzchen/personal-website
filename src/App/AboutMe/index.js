@@ -5,10 +5,10 @@ import Section from 'components/Section';
 import Text from 'components/Text';
 
 import { aboutMe } from 'lib/locations';
+import { getSingle } from 'lib/prismicGateway';
 
 import Details from './Details';
 
-import { getSingle } from './prismicGateway';
 
 class AboutMe extends React.Component {
   constructor(props) {
