@@ -27,7 +27,6 @@ const withPrismic = (payload, type) => Component => (
     }
 
     render() {
-      console.log(this.state);
       return (
         <Component
           {...this.state}
