@@ -1,7 +1,9 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+
+import withPrismic from 'components/withPrismic';
 
 import { home } from 'lib/locations';
-import { getSingle } from 'lib/prismicGateway';
 
 import Title from './Title';
 import SocialMediaContainer from './SocialMediaContainer';
@@ -9,16 +11,6 @@ import SocialMediaContainer from './SocialMediaContainer';
 class Splash extends React.Component {
   constructor(props) {
     super(props);
-
-    this.state = {
-      backgroundUrl: '',
-    };
-
-    getSingle('splash').then(res => {
-      this.setState({
-        backgroundUrl: res.background_image.url,
-      });
-    });
 
     window.addEventListener('resize', this.resize);
   }
@@ -36,7 +28,7 @@ class Splash extends React.Component {
       display: 'flex',
       flexDirection: 'column',
       height: `${window.innerHeight}px`,
-      backgroundImage: `url("${this.state.backgroundUrl}")`,
+      backgroundImage: `url("${this.props.background_image.url}")`,
       backgroundSize: 'cover',
       backgroundPosition: 'center',
       backgroundAttachment: 'fixed',
@@ -52,4 +44,12 @@ class Splash extends React.Component {
   }
 }
 
-export default Splash;
+Splash.propTypes = {
+  background_image: PropTypes.object,
+};
+
+Splash.defaultProps = {
+  background_image: { url: '' },
+};
+
+export default withPrismic('single', 'splash')(Splash);
