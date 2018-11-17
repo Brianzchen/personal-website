@@ -1,51 +1,41 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import uuid from 'uuid/v1';
 
 import Section from 'components/Section';
 import Text from 'components/Text';
+import withPrismic from 'components/withPrismic';
 
 import { aboutMe } from 'lib/locations';
-import { getSingle } from 'lib/prismicGateway';
 
 import Details from './Details';
 
-
-class AboutMe extends React.Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      profilePicUrl: '',
-      location: '',
-      summary: [],
-    };
-
-    getSingle('about_me').then(res => {
-      this.setState({
-        profilePicUrl: res.profile_pic.url,
-        location: res.location[0].text,
-        summary: res.summary,
-      });
-    });
-  }
-
-  render() {
-    return (
-      <Section location={aboutMe}>
-        <Details
-          profilePicUrl={this.state.profilePicUrl}
-          location={this.state.location}
-        />
-        <Text>
-          {this.state.summary.map(o => (
-            <p key={uuid()}>
-              {o.text}
-            </p>
+const AboutMe = props => (
+  <Section location={aboutMe}>
+    <Details
+      profilePicUrl={props.profile_pic.url}
+      location={props.location[0].text}
+    />
+    <Text>
+      {props.summary.map(o => (
+        <p key={uuid()}>
+          {o.text}
+        </p>
           ))}
-        </Text>
-      </Section>
-    );
-  }
-}
+    </Text>
+  </Section>
+);
 
-export default AboutMe;
+AboutMe.propTypes = {
+  profile_pic: PropTypes.object,
+  location: PropTypes.arrayOf(PropTypes.object),
+  summary: PropTypes.arrayOf(PropTypes.object),
+};
+
+AboutMe.defaultProps = {
+  profile_pic: { url: '' },
+  location: [{ text: '' }],
+  summary: [],
+};
+
+export default withPrismic('single', 'about_me')(AboutMe);

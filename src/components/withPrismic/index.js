@@ -7,18 +7,27 @@ const withPrismic = (payload, type) => Component => (
     constructor(props) {
       super(props);
 
-      const query = payload === 'single'
+      const isSingle = payload === 'single';
+
+      const query = isSingle
         ? getSingle
         : getList;
 
       query(type).then(res => {
-        this.setState({
-          ...res,
-        });
+        this.setState(
+          isSingle
+            ? {
+              ...res,
+            }
+            : {
+              list: res,
+            },
+        );
       });
     }
 
     render() {
+      console.log(this.state);
       return (
         <Component
           {...this.state}
