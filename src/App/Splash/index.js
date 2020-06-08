@@ -45,7 +45,9 @@ class Splash extends React.Component {
 }
 
 Splash.propTypes = {
-  background_image: PropTypes.object,
+  background_image: PropTypes.shape({
+    url: PropTypes.string,
+  }),
 };
 
 Splash.defaultProps = {

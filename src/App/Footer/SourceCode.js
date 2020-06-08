@@ -7,7 +7,9 @@ const SourceCode = () => (
     rel="noopener noreferrer"
   >
     <i>
-      Source code <i className="mdi mdi-github-circle" />
+      Source code
+      {' '}
+      <i className="mdi mdi-github-circle" />
     </i>
   </a>
 );

@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 import Header from 'components/Header';
 
-const Section = props => {
+const Section = (props) => {
   const style = {
     padding: '8px 8px 0',
   };
@@ -22,7 +22,7 @@ const Section = props => {
 };
 
 Section.propTypes = {
-  style: PropTypes.object,
+  style: PropTypes.shape({}),
   location: PropTypes.shape({
     name: PropTypes.string.isRequired,
     link: PropTypes.string.isRequired,

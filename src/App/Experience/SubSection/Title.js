@@ -5,7 +5,7 @@ const style = {
   textDecoration: 'underline',
 };
 
-const Title = props => (
+const Title = (props) => (
   <a
     href={props.link}
     target="_blank"

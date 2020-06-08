@@ -8,12 +8,12 @@ import { skillset } from 'lib/locations';
 
 import Skill from './Skill';
 
-const Skillset = props => (
+const Skillset = (props) => (
   <Section
     location={skillset}
   >
     {
-      props.list.map(o => (
+      props.list.map((o) => (
         <Skill
           key={o.text}
           name={o.text}

@@ -75,7 +75,7 @@ class NavBar extends React.Component {
 
     return (
       <div
-        ref={o => { this.container = o; }}
+        ref={(o) => { this.container = o; }}
         className={
           `float-in ${css(styles.container, this.state.scrolledPastTop && boxShadow)}`
         }

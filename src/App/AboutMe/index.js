@@ -10,24 +10,26 @@ import { aboutMe } from 'lib/locations';
 
 import Details from './Details';
 
-const AboutMe = props => (
+const AboutMe = (props) => (
   <Section location={aboutMe}>
     <Details
       profilePicUrl={props.profile_pic.url}
       location={props.location[0].text}
     />
     <Text>
-      {props.summary.map(o => (
+      {props.summary.map((o) => (
         <p key={uuid()}>
           {o.text}
         </p>
-          ))}
+      ))}
     </Text>
   </Section>
 );
 
 AboutMe.propTypes = {
-  profile_pic: PropTypes.object,
+  profile_pic: PropTypes.shape({
+    url: PropTypes.string,
+  }),
   location: PropTypes.arrayOf(PropTypes.object),
   summary: PropTypes.arrayOf(PropTypes.object),
 };

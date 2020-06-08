@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 import Text from 'components/Text';
 
-const Body = props => (
+const Body = (props) => (
   <Text>
     {props.value}
   </Text>

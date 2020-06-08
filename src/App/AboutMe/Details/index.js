@@ -10,7 +10,7 @@ const style = {
   padding: '0 24px',
 };
 
-const Details = props => (
+const Details = (props) => (
   <div style={style}>
     <Photo
       url={props.profilePicUrl}

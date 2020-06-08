@@ -2,7 +2,7 @@ import React from 'react';
 
 import { getSingle, getList } from 'lib/prismicGateway';
 
-const withPrismic = (payload, type) => Component => (
+const withPrismic = (payload, type) => (Component) => (
   class extends React.Component {
     constructor(props) {
       super(props);
@@ -13,7 +13,7 @@ const withPrismic = (payload, type) => Component => (
         ? getSingle
         : getList;
 
-      query(type).then(res => {
+      query(type).then((res) => {
         this.setState(
           isSingle
             ? {

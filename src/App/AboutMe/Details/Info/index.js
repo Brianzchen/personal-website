@@ -17,7 +17,7 @@ const style = {
   marginRight: 'auto',
 };
 
-const Info = props => (
+const Info = (props) => (
   <div style={style}>
     <Details name="Age" value={getAge()} />
     <Details name="Location" value={props.location} />

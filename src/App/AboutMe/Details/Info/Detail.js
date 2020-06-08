@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const Detail = props => (
+const Detail = (props) => (
   <div>
     <strong>
       {props.name}
