@@ -10,7 +10,7 @@ const Body = (props) => (
 );
 
 Body.propTypes = {
-  value: PropTypes.string.isRequired,
+  value: PropTypes.arrayOf(PropTypes.node).isRequired,
 };
 
 export default Body;

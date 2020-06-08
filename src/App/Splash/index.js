@@ -1,4 +1,7 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+
+import withPrismic from 'components/withPrismic';
 
 import { home } from 'lib/locations';
 
@@ -25,7 +28,7 @@ class Splash extends React.Component {
       display: 'flex',
       flexDirection: 'column',
       height: `${window.innerHeight}px`,
-      backgroundImage: 'url("public/images/splash.jpg")',
+      backgroundImage: `url("${this.props.background_image.url}")`,
       backgroundSize: 'cover',
       backgroundPosition: 'center',
       backgroundAttachment: 'fixed',
@@ -41,4 +44,14 @@ class Splash extends React.Component {
   }
 }
 
-export default Splash;
+Splash.propTypes = {
+  background_image: PropTypes.shape({
+    url: PropTypes.string,
+  }),
+};
+
+Splash.defaultProps = {
+  background_image: { url: '' },
+};
+
+export default withPrismic('single', 'splash')(Splash);

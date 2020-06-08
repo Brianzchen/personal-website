@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 class Photo extends React.Component {
   constructor(props) {
@@ -45,7 +46,7 @@ class Photo extends React.Component {
       img: {
         height: '100%',
         width: '100%',
-        background: 'url("public/images/profile.jpg")',
+        background: `url("${this.props.url}")`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         MozTransform: transform,
@@ -59,10 +60,18 @@ class Photo extends React.Component {
         ref={(o) => { this.container = o; }}
         style={styles.container}
       >
-        <div style={styles.img} />
+        {
+          this.props.url
+            ? <div style={styles.img} />
+            : null
+        }
       </div>
     );
   }
 }
+
+Photo.propTypes = {
+  url: PropTypes.string.isRequired,
+};
 
 export default Photo;

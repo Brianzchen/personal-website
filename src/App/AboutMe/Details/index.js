@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import Info from './Info';
 import Photo from './Photo';
@@ -9,11 +10,20 @@ const style = {
   padding: '0 24px',
 };
 
-const Details = () => (
+const Details = (props) => (
   <div style={style}>
-    <Photo />
-    <Info />
+    <Photo
+      url={props.profilePicUrl}
+    />
+    <Info
+      location={props.location}
+    />
   </div>
 );
+
+Details.propTypes = {
+  profilePicUrl: PropTypes.string.isRequired,
+  location: PropTypes.string.isRequired,
+};
 
 export default Details;

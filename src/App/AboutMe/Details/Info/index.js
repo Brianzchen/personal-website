@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import Details from './Detail';
 
@@ -16,11 +17,15 @@ const style = {
   marginRight: 'auto',
 };
 
-const Info = () => (
+const Info = (props) => (
   <div style={style}>
     <Details name="Age" value={getAge()} />
-    <Details name="Location" value="Sydney, AU" />
+    <Details name="Location" value={props.location} />
   </div>
 );
+
+Info.propTypes = {
+  location: PropTypes.string.isRequired,
+};
 
 export default Info;

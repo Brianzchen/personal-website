@@ -1,25 +1,34 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import Section from 'components/Section';
+import withPrismic from 'components/withPrismic';
 
 import { skillset } from 'lib/locations';
 
 import Skill from './Skill';
 
-const Skillset = () => (
+const Skillset = (props) => (
   <Section
     location={skillset}
   >
-    <Skill name="JavaScript" />
-    <Skill name="ReactJS" />
-    <Skill name="Redux" />
-    <Skill name="Client-side routing" />
-    <Skill name="Webpack" />
-    <Skill name="Babel" />
-    <Skill name="SPA/PWA best practices" />
-    <Skill name="HTML5" />
-    <Skill name="CSS3" />
+    {
+      props.list.map((o) => (
+        <Skill
+          key={o.text}
+          name={o.text}
+        />
+      ))
+    }
   </Section>
 );
 
-export default Skillset;
+Skillset.propTypes = {
+  list: PropTypes.arrayOf(PropTypes.object),
+};
+
+Skillset.defaultProps = {
+  list: [],
+};
+
+export default withPrismic('single', 'skil')(Skillset);

@@ -1,36 +1,48 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+import uuid from 'uuid/v1';
 
 import Section from 'components/Section';
+import withPrismic from 'components/withPrismic';
 
 import { experience } from 'lib/locations';
 
 import SubSection from './SubSection';
 
-import kiwiplan from './texts/kiwiplan';
-import dhax from './texts/dhax';
-import takeABreak from './texts/takeABreak';
+const sortList = (list) => list.sort((a, b) => (
+  new Date(b.timestamp).getTime() - new Date(a.timestamp).getTime()
+));
 
-const Experience = () => (
+const Experience = (props) => (
   <Section location={experience}>
-    <SubSection
-      title="Kiwiplan NZ"
-      link="http://www.kiwiplan.com/"
-    >
-      {kiwiplan}
-    </SubSection>
-    <SubSection
-      title="Dhax"
-      link="https://dhax.surge.sh/"
-    >
-      {dhax}
-    </SubSection>
-    <SubSection
-      title="Take a Break"
-      link="https://brianzchen.github.io/take-a-break/"
-    >
-      {takeABreak}
-    </SubSection>
+    {
+      sortList(props.list).map((exp) => (
+        <SubSection
+          key={exp.id}
+          title={exp.title[0].text}
+          link={exp.url.url}
+        >
+          {
+            exp.description.map((o) => (
+              <p
+                key={uuid()}
+              >
+                {o.text}
+              </p>
+            ))
+          }
+        </SubSection>
+      ))
+    }
   </Section>
 );
 
-export default Experience;
+Experience.propTypes = {
+  list: PropTypes.arrayOf(PropTypes.object),
+};
+
+Experience.defaultProps = {
+  list: [],
+};
+
+export default withPrismic('list', 'experience')(Experience);
