@@ -10,7 +10,7 @@ const style = {
   fontSize: '13px',
 };
 
-const Link = props => (
+const Link = (props) => (
   <a
     style={style}
     href={`#${props.link}`}

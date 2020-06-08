@@ -5,7 +5,7 @@ const style = {
   textAlign: 'center',
 };
 
-const Title = props => (
+const Title = (props) => (
   <h2 style={style}>
     {props.value}
   </h2>

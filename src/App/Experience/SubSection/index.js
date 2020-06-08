@@ -10,7 +10,7 @@ const style = {
   flexDirection: 'column',
 };
 
-const SubSection = props => (
+const SubSection = (props) => (
   <div
     style={style}
     className="max-width"

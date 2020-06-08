@@ -7,7 +7,7 @@ const style = {
   whiteSpace: 'pre-line',
 };
 
-const Text = props => (
+const Text = (props) => (
   <div style={style}>
     {props.children}
   </div>

@@ -4,7 +4,11 @@ const year = new Date().getFullYear();
 
 const Copyright = () => (
   <div>
-    Brian Chen <i className="mdi mdi-copyright" /> {year}
+    Brian Chen
+    {' '}
+    <i className="mdi mdi-copyright" />
+    {' '}
+    {year}
   </div>
 );
 

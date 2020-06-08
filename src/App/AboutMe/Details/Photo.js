@@ -1,6 +1,5 @@
 import React from 'react';
 
-
 class Photo extends React.Component {
   constructor(props) {
     super(props);
@@ -57,7 +56,7 @@ class Photo extends React.Component {
 
     return (
       <div
-        ref={o => { this.container = o; }}
+        ref={(o) => { this.container = o; }}
         style={styles.container}
       >
         <div style={styles.img} />

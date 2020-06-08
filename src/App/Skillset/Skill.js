@@ -18,7 +18,7 @@ const styles = StyleSheet.create({
   },
 });
 
-const Skill = props => (
+const Skill = (props) => (
   <span className={css(styles.container, boxShadow)}>
     {props.name}
   </span>

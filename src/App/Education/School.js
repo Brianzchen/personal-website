@@ -17,7 +17,7 @@ const styles = {
   },
 };
 
-const School = props => (
+const School = (props) => (
   <div style={styles.container}>
     <div>
       <p style={styles.name}>

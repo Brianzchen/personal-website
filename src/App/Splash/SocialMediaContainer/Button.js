@@ -10,7 +10,7 @@ const style = {
   cursor: 'pointer',
 };
 
-const Button = props => (
+const Button = (props) => (
   <a
     style={style}
     href={props.link}
