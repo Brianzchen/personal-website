@@ -9,9 +9,14 @@
 [libs]
 
 [lints]
+deprecated-type=error
+deprecated-utility=error
+unnecessary-optional-chain=error
 
 [options]
-esproposal.optional_chaining=enable
-types_first=true
+format.bracket_spacing=true
+format.single_quotes=true
+exact_by_default=true
+include_warnings=true
 
 [strict]
