@@ -10,15 +10,17 @@ const style = {
   flexDirection: 'column',
 };
 
-const SubSection = (props) => (
-  <div
-    style={style}
-    className="max-width"
-  >
-    <Title value={props.title} link={props.link} />
-    <Body value={props.children} />
-  </div>
-);
+const SubSection = function (props) {
+  return (
+    <div
+      style={style}
+      className="max-width"
+    >
+      <Title value={props.title} link={props.link} />
+      <Body value={props.children} />
+    </div>
+  );
+};
 
 SubSection.propTypes = {
   title: PropTypes.node.isRequired,

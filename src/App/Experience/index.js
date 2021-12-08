@@ -2,10 +2,10 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import uuid from 'uuid/v1';
 
-import Section from 'components/Section';
-import withPrismic from 'components/withPrismic';
+import Section from '@lib/components/Section';
+import withPrismic from '@lib/components/withPrismic';
 
-import { experience } from 'lib/locations';
+import { experience } from '@lib/utils/locations';
 
 import SubSection from './SubSection';
 
@@ -13,9 +13,10 @@ const sortList = (list) => list.sort((a, b) => (
   new Date(b.timestamp).getTime() - new Date(a.timestamp).getTime()
 ));
 
-const Experience = (props) => (
-  <Section location={experience}>
-    {
+const Experience = function (props) {
+  return (
+    <Section location={experience}>
+      {
       sortList(props.list).map((exp) => (
         <SubSection
           key={exp.id}
@@ -34,8 +35,9 @@ const Experience = (props) => (
         </SubSection>
       ))
     }
-  </Section>
-);
+    </Section>
+  );
+};
 
 Experience.propTypes = {
   list: PropTypes.arrayOf(PropTypes.object),

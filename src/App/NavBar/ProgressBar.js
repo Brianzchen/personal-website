@@ -1,6 +1,6 @@
 import React from 'react';
 
-import colors from 'lib/colors';
+import colors from '@lib/utils/colors';
 
 class ProgressBar extends React.Component {
   constructor(props) {
@@ -15,7 +15,7 @@ class ProgressBar extends React.Component {
 
   scroll = () => {
     this.forceUpdate();
-  }
+  };
 
   render() {
     const progress = (window.scrollY / (document.body.offsetHeight - window.innerHeight)) * 100;

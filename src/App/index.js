@@ -1,6 +1,6 @@
 import React from 'react';
 
-import colors from 'lib/colors';
+import colors from '@lib/utils/colors';
 
 import NavBar from './NavBar';
 import Splash from './Splash';
@@ -14,16 +14,18 @@ const style = {
   color: colors.content,
 };
 
-const App = () => (
-  <div style={style}>
-    <NavBar />
-    <Splash />
-    <AboutMe />
-    <Experience />
-    <Skillset />
-    <Education />
-    <Footer />
-  </div>
-);
+const App = function () {
+  return (
+    <div style={style}>
+      <NavBar />
+      <Splash />
+      <AboutMe />
+      <Experience />
+      <Skillset />
+      <Education />
+      <Footer />
+    </div>
+  );
+};
 
 export default App;

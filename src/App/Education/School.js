@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import colors from 'lib/colors';
+import colors from '@lib/utils/colors';
 
 const styles = {
   container: {
@@ -17,30 +17,32 @@ const styles = {
   },
 };
 
-const School = (props) => (
-  <div style={styles.container}>
-    <div>
-      <p style={styles.name}>
-        {props.name}
-      </p>
-      <p>
-        {props.dateRange}
-      </p>
+const School = function (props) {
+  return (
+    <div style={styles.container}>
+      <div>
+        <p style={styles.name}>
+          {props.name}
+        </p>
+        <p>
+          {props.dateRange}
+        </p>
+      </div>
+      <div>
+        <p>
+          {props.studies}
+        </p>
+        <p>
+          <i
+            style={styles.markerIcon}
+            className="mdi mdi-map-marker"
+          />
+          {props.location}
+        </p>
+      </div>
     </div>
-    <div>
-      <p>
-        {props.studies}
-      </p>
-      <p>
-        <i
-          style={styles.markerIcon}
-          className="mdi mdi-map-marker"
-        />
-        {props.location}
-      </p>
-    </div>
-  </div>
-);
+  );
+};
 
 School.propTypes = {
   name: PropTypes.string.isRequired,

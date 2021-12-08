@@ -10,14 +10,16 @@ const style = {
   fontSize: '13px',
 };
 
-const Link = (props) => (
-  <a
-    style={style}
-    href={`#${props.link}`}
-  >
-    {props.name.toUpperCase()}
-  </a>
-);
+const Link = function (props) {
+  return (
+    <a
+      style={style}
+      href={`#${props.link}`}
+    >
+      {props.name.toUpperCase()}
+    </a>
+  );
+};
 
 Link.propTypes = {
   name: PropTypes.string.isRequired,

@@ -30,7 +30,7 @@ class Photo extends React.Component {
       const ratio = (container.top / (lowestPoint)) * maxAdd;
       this.setState({ scale: base + ratio });
     }
-  }
+  };
 
   render() {
     const transform = `scale(${this.state.scale})`;

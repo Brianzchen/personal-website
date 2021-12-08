@@ -13,11 +13,13 @@ const style = {
   boxSizing: 'border-box',
 };
 
-const Footer = () => (
-  <div style={style} className="max-width">
-    <Copyright />
-    <SourceCode />
-  </div>
-);
+const Footer = function () {
+  return (
+    <div style={style} className="max-width">
+      <Copyright />
+      <SourceCode />
+    </div>
+  );
+};
 
 export default Footer;

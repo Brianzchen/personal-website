@@ -1,18 +1,19 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import Section from 'components/Section';
-import withPrismic from 'components/withPrismic';
+import Section from '@lib/components/Section';
+import withPrismic from '@lib/components/withPrismic';
 
-import { skillset } from 'lib/locations';
+import { skillset } from '@lib/utils/locations';
 
 import Skill from './Skill';
 
-const Skillset = (props) => (
-  <Section
-    location={skillset}
-  >
-    {
+const Skillset = function (props) {
+  return (
+    <Section
+      location={skillset}
+    >
+      {
       props.list.map((o) => (
         <Skill
           key={o.text}
@@ -20,8 +21,9 @@ const Skillset = (props) => (
         />
       ))
     }
-  </Section>
-);
+    </Section>
+  );
+};
 
 Skillset.propTypes = {
   list: PropTypes.arrayOf(PropTypes.object),

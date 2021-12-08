@@ -7,11 +7,13 @@ const style = {
   whiteSpace: 'pre-line',
 };
 
-const Text = (props) => (
-  <div style={style}>
-    {props.children}
-  </div>
-);
+const Text = function (props) {
+  return (
+    <div style={style}>
+      {props.children}
+    </div>
+  );
+};
 
 Text.propTypes = {
   children: PropTypes.node.isRequired,

@@ -1,9 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import withPrismic from 'components/withPrismic';
+import withPrismic from '@lib/components/withPrismic';
 
-import { home } from 'lib/locations';
+import { home } from '@lib/utils/locations';
 
 import Title from './Title';
 import SocialMediaContainer from './SocialMediaContainer';
@@ -21,7 +21,7 @@ class Splash extends React.Component {
 
   resize = () => {
     this.forceUpdate();
-  }
+  };
 
   render() {
     const style = {

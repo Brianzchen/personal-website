@@ -2,9 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { StyleSheet, css } from 'aphrodite';
 
-import { boxShadow } from 'css';
+import { boxShadow } from '@lib/css';
 
-import colors from 'lib/colors';
+import colors from '@lib/utils/colors';
 
 const styles = StyleSheet.create({
   container: {
@@ -18,11 +18,13 @@ const styles = StyleSheet.create({
   },
 });
 
-const Skill = (props) => (
-  <span className={css(styles.container, boxShadow)}>
-    {props.name}
-  </span>
-);
+const Skill = function (props) {
+  return (
+    <span className={css(styles.container, boxShadow)}>
+      {props.name}
+    </span>
+  );
+};
 
 Skill.propTypes = {
   name: PropTypes.string.isRequired,

@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { getSingle, getList } from 'lib/prismicGateway';
+import { getSingle, getList } from '@lib/utils/prismicGateway';
 
 const withPrismic = (payload, type) => (Component) => (
   class extends React.Component {

@@ -17,12 +17,14 @@ const style = {
   marginRight: 'auto',
 };
 
-const Info = (props) => (
-  <div style={style}>
-    <Details name="Age" value={getAge()} />
-    <Details name="Location" value={props.location} />
-  </div>
-);
+const Info = function (props) {
+  return (
+    <div style={style}>
+      <Details name="Age" value={getAge()} />
+      <Details name="Location" value={props.location} />
+    </div>
+  );
+};
 
 Info.propTypes = {
   location: PropTypes.string.isRequired,

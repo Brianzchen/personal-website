@@ -1,9 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import Header from 'components/Header';
+import Header from '@lib/components/Header';
 
-const Section = (props) => {
+const Section = function (props) {
   const style = {
     padding: '8px 8px 0',
   };

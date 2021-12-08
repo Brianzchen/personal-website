@@ -5,17 +5,19 @@ const style = {
   textDecoration: 'underline',
 };
 
-const Title = (props) => (
-  <a
-    href={props.link}
-    target="_blank"
-    rel="noopener noreferrer"
-  >
-    <h3 style={style}>
-      {props.value}
-    </h3>
-  </a>
-);
+const Title = function (props) {
+  return (
+    <a
+      href={props.link}
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      <h3 style={style}>
+        {props.value}
+      </h3>
+    </a>
+  );
+};
 
 Title.propTypes = {
   value: PropTypes.string.isRequired,

@@ -10,19 +10,21 @@ const style = {
   cursor: 'pointer',
 };
 
-const Button = (props) => (
-  <a
-    style={style}
-    href={props.link}
-    target="_blank"
-    rel="noopener noreferrer"
-  >
-    <i
-      className={`mdi mdi-${props.icon}`}
-      title={props.title}
-    />
-  </a>
-);
+const Button = function (props) {
+  return (
+    <a
+      style={style}
+      href={props.link}
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      <i
+        className={`mdi mdi-${props.icon}`}
+        title={props.title}
+      />
+    </a>
+  );
+};
 
 Button.propTypes = {
   icon: PropTypes.string.isRequired,

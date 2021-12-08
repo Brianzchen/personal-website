@@ -11,11 +11,13 @@ const style = {
   alignItems: 'center',
 };
 
-const Title = () => (
-  <div style={style} className="fade-in">
-    <Name />
-    <SubTitle />
-  </div>
-);
+const Title = function () {
+  return (
+    <div style={style} className="fade-in">
+      <Name />
+      <SubTitle />
+    </div>
+  );
+};
 
 export default Title;
