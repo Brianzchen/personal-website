@@ -2881,10 +2881,10 @@ eslint-config-airbnb@^19.0.2:
     object.assign "^4.1.2"
     object.entries "^1.1.5"
 
-eslint-config-bzc@^1.0.0:
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/eslint-config-bzc/-/eslint-config-bzc-1.0.0.tgz#fd4540a045eb80e60bab01174c131f3961fa6a06"
-  integrity sha512-TjmS5dOQZOPm0O+KUGlzDjechRfFDgfCx6+3hXHeGpQsYZL9SkpTZ146vi7ZuqrwGBPmax9GFCR3bOdfZdlSAw==
+eslint-config-bzc@^1.0.2:
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/eslint-config-bzc/-/eslint-config-bzc-1.0.2.tgz#d8115007c7dc118811cffa86a9d5679e15db6e52"
+  integrity sha512-mGvlB5YuYIXBOLLFvqBTEuoGlajYm7QOB03v10wwvHty6djGoSxiGbSBalbwJoPQGwEzS83ojKOArfyDoABKqA==
 
 eslint-import-resolver-node@^0.3.6:
   version "0.3.6"

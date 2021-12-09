@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 import Header from '@lib/components/Header';
 
-const Section = function (props) {
+const Section = (props) => {
   const style = {
     padding: '8px 8px 0',
   };

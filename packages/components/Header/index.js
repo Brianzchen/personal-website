@@ -5,13 +5,11 @@ const style = {
   textAlign: 'center',
 };
 
-const Title = function (props) {
-  return (
-    <h2 style={style}>
-      {props.value}
-    </h2>
-  );
-};
+const Title = (props) => (
+  <h2 style={style}>
+    {props.value}
+  </h2>
+);
 
 Title.propTypes = {
   value: PropTypes.string.isRequired,

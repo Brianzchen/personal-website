@@ -5,12 +5,10 @@ const style = {
   marginBottom: 0,
 };
 
-const Name = function () {
-  return (
-    <h1 style={style}>
-      Brian Chen
-    </h1>
-  );
-};
+const Name = () => (
+  <h1 style={style}>
+    Brian Chen
+  </h1>
+);
 
 export default Name;

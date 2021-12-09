@@ -6,12 +6,10 @@ const style = {
   color: colors.white,
 };
 
-const SubTitle = function () {
-  return (
-    <i style={style}>
-      Front-end web developer
-    </i>
-  );
-};
+const SubTitle = () => (
+  <i style={style}>
+    Front-end web developer
+  </i>
+);
 
 export default SubTitle;
