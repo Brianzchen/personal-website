@@ -2881,10 +2881,10 @@ eslint-config-airbnb@^19.0.2:
     object.assign "^4.1.2"
     object.entries "^1.1.5"
 
-eslint-config-bzc@^1.0.2:
-  version "1.0.2"
-  resolved "https://registry.yarnpkg.com/eslint-config-bzc/-/eslint-config-bzc-1.0.2.tgz#d8115007c7dc118811cffa86a9d5679e15db6e52"
-  integrity sha512-mGvlB5YuYIXBOLLFvqBTEuoGlajYm7QOB03v10wwvHty6djGoSxiGbSBalbwJoPQGwEzS83ojKOArfyDoABKqA==
+eslint-config-bzc@^1.0.3:
+  version "1.0.3"
+  resolved "https://registry.yarnpkg.com/eslint-config-bzc/-/eslint-config-bzc-1.0.3.tgz#5506c49457cb331bc295fdd4be456839d518ea43"
+  integrity sha512-THneMmNVNQq9wU2xWrsYjnSZ3HvL82bwOmd6zi+4Mr/3MuUnaTyPsd47ugl+uNT5XHS1Yyk2ZKawxcvBjD0qHw==
 
 eslint-import-resolver-node@^0.3.6:
   version "0.3.6"
@@ -2908,10 +2908,10 @@ eslint-plugin-fb-flow@^0.0.4:
   resolved "https://registry.yarnpkg.com/eslint-plugin-fb-flow/-/eslint-plugin-fb-flow-0.0.4.tgz#47fa51630a5620b3b03919194e783ddfc094fd5d"
   integrity sha512-VWRoULiRkYqgeX4uCw2uIuu4v5DOhtWC+4fLM+qXX2mUtLf07znqhyTtxwIugnX8MgPczkaKmtDPrkuhvFmAoA==
 
-eslint-plugin-flowtype@^8.0.3:
-  version "8.0.3"
-  resolved "https://registry.yarnpkg.com/eslint-plugin-flowtype/-/eslint-plugin-flowtype-8.0.3.tgz#e1557e37118f24734aa3122e7536a038d34a4912"
-  integrity sha512-dX8l6qUL6O+fYPtpNRideCFSpmWOUVx5QcaGLVqe/vlDiBSe4vYljDWDETwnyFzpl7By/WVIu6rcrniCgH9BqQ==
+eslint-plugin-ft-flow@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-ft-flow/-/eslint-plugin-ft-flow-1.0.1.tgz#9188c01396b1cbf91f3e80c40fac619d6d8f8ca9"
+  integrity sha512-iRMHqeUph+uxBCyKeUhGa63t12U/ID6JWul//DdyuFkjXbYvC+NRiP9kiQnPflInFcO+kze+pgMOcBik9uTUig==
   dependencies:
     lodash "^4.17.21"
     string-natural-compare "^3.0.1"
